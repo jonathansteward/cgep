@@ -1,0 +1,73 @@
+{
+  "test_results": {
+    "summary": "PASS: 8/8",
+    "tests": [
+      {
+        "file": "policies/tests/sc28_encryption_test.rego",
+        "line": 22,
+        "name": "data.compliance.sc28_test.test_compliant_passes",
+        "result": "PASS",
+        "duration": "4.481078ms"
+      },
+      {
+        "file": "policies/tests/sc28_encryption_test.rego",
+        "line": 24,
+        "name": "data.compliance.sc28_test.test_noncompliant_fails",
+        "result": "PASS",
+        "duration": "645.335µs"
+      },
+      {
+        "file": "policies/tests/ac3_no_public_test.rego",
+        "line": 19,
+        "name": "data.compliance.ac3_test.test_compliant_bucket_passes",
+        "result": "PASS",
+        "duration": "718.889µs"
+      },
+      {
+        "file": "policies/tests/ac3_no_public_test.rego",
+        "line": 21,
+        "name": "data.compliance.ac3_test.test_public_bucket_fails",
+        "result": "PASS",
+        "duration": "4.307841ms"
+      },
+      {
+        "file": "policies/tests/ac3_no_public_test.rego",
+        "line": 26,
+        "name": "data.compliance.ac3_test.test_open_management_port_fails",
+        "result": "PASS",
+        "duration": "4.433201ms"
+      },
+      {
+        "file": "policies/tests/cm6_required_tags_test.rego",
+        "line": 18,
+        "name": "data.compliance.cm6_test.test_complete_passes",
+        "result": "PASS",
+        "duration": "1.01229ms"
+      },
+      {
+        "file": "policies/tests/cm6_required_tags_test.rego",
+        "line": 19,
+        "name": "data.compliance.cm6_test.test_partial_fails",
+        "result": "PASS",
+        "duration": "1.485346ms"
+      },
+      {
+        "file": "policies/tests/cm6_required_tags_test.rego",
+        "line": 20,
+        "name": "data.compliance.cm6_test.test_no_labels_fail",
+        "result": "PASS",
+        "duration": "4.839027ms"
+      }
+    ]
+  },
+  "sc28_check": [
+    "[SC-28] google_storage_bucket.bad_no_cmek: missing customer-managed encryption key. Remediation: add encryption { default_kms_key_name = ... }."
+  ],
+  "ac3_check": [
+    "[AC-3] google_compute_firewall.open_ssh: management port 22 open to 0.0.0.0/0. Remediation: narrow source_ranges or remove the rule.",
+    "[AC-3] google_storage_bucket.bad_public: bucket allows public access. Remediation: set uniform_bucket_level_access=true and public_access_prevention=\"enforced\"."
+  ],
+  "cm6_check": [
+    "[CM-6] google_storage_bucket.bad_no_labels: missing required labels [\"compliance_scope\", \"environment\", \"managed_by\", \"project\"]. Remediation: add the missing labels to the resource."
+  ]
+}
