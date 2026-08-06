@@ -41,6 +41,12 @@ resource "aws_s3_bucket" "primary" {
 # SC-28: Protection of information at rest.
 # AES-256 keeps this lab simple. The commented block below shows how you'd
 # switch to KMS-managed keys, covered in a later lab.
+resource "aws_s3_bucket_server_side_encryption_configuration" "primary" {
+  bucket = aws_s3_bucket.primary.id
+  rule {
+    apply_server_side_encryption_by_default { sse_algorithm = "AES256" }
+  }
+}
 
 # CM-6: Versioning preserves prior object states for recovery and audit.
 resource "aws_s3_bucket_versioning" "primary" {
