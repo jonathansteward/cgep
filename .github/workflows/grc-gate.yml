@@ -13,7 +13,7 @@ permissions:
 
 env:
   AWS_REGION: us-east-1
-  TF_WORKING_DIR: terraform
+  TF_WORKING_DIR: lab_4-3/oidc
 
 jobs:
   grc-gate:
@@ -94,13 +94,13 @@ jobs:
       - name: Copy plan into evidence
         if: always()
         run: |
-          cp ${{ env.TF_WORKING_DIR }}/plan.json evidence/plan.json
-          cp ${{ env.TF_WORKING_DIR }}/plan.txt  evidence/plan.txt
+          cp ${{ env.TF_WORKING_DIR }}/plan.json lab_4-3/evidence/plan.json
+          cp ${{ env.TF_WORKING_DIR }}/plan.txt  lab_4-3/evidence/plan.txt
 
       - name: Upload evidence artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: grc-evidence-${{ github.run_id }}
-          path: evidence/
+          path: lab_4-3/evidence/
           retention-days: 90
