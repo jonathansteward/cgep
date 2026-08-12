@@ -14,14 +14,14 @@
         "line": 24,
         "name": "data.compliance.sc28_test.test_noncompliant_fails",
         "result": "PASS",
-        "duration": "645.335µs"
+        "duration": "645.335\u00b5s"
       },
       {
         "file": "policies/tests/ac3_no_public_test.rego",
         "line": 19,
         "name": "data.compliance.ac3_test.test_compliant_bucket_passes",
         "result": "PASS",
-        "duration": "718.889µs"
+        "duration": "718.889\u00b5s"
       },
       {
         "file": "policies/tests/ac3_no_public_test.rego",

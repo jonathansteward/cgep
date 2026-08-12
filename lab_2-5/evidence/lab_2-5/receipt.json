@@ -1,1 +1,7 @@
-{"run_id":"test-001","vault":"cgep-lab-grc-evidence-vault-8d473e64","key":"runs/test-001/bundle.tar.gz","version_id":"DuHsfDh7djkUghFKSARv5_RQQFgM8vxc","captured_at_utc":"2026-08-04T01:11:24Z"}
+{
+  "run_id": "test-001",
+  "vault": "cgep-lab-grc-evidence-vault-8d473e64",
+  "key": "runs/test-001/bundle.tar.gz",
+  "version_id": "DuHsfDh7djkUghFKSARv5_RQQFgM8vxc",
+  "captured_at_utc": "2026-08-04T01:11:24Z"
+}
